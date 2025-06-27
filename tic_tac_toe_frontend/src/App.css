@@ -1,0 +1,203 @@
+/* Theme variables for the Tic Tac Toe UI */
+:root {
+  --ttt-primary: #1976d2;
+  --ttt-accent: #ff4081;
+  --ttt-secondary: #f5f5f5;
+  --ttt-bg: #ffffff;
+  --ttt-status-bg: #f5f5f5;
+  --ttt-border: #d0d7e2;
+  --ttt-title: #333;
+  --ttt-shadow: 0 2px 8px rgba(25, 118, 210, .06);
+  --ttt-radius: 16px;
+  --ttt-footer-text: #757575;
+  --ttt-status-text: #1976d2;
+}
+
+/* Responsive container and general layout */
+body,
+.ttt-app-bg {
+  min-height: 100vh;
+  background: var(--ttt-secondary);
+}
+
+.ttt-app-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+/* Center main container */
+.ttt-container {
+  min-width: 320px;
+  max-width: 95vw;
+  width: 370px;
+  margin: 0 auto;
+  background: var(--ttt-bg);
+  border-radius: var(--ttt-radius);
+  box-shadow: var(--ttt-shadow);
+  padding: 2.2rem 1.2rem 1.6rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title styling */
+.ttt-header {
+  margin-bottom: 1.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ttt-title {
+  color: var(--ttt-primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Board styling */
+.ttt-board-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+.ttt-board {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 270px;
+  aspect-ratio: 1/1;
+}
+.ttt-board-row {
+  display: flex;
+  flex-direction: row;
+}
+.ttt-square {
+  width: 90px;
+  height: 90px;
+  background: var(--ttt-secondary);
+  border: 2px solid var(--ttt-border);
+  border-radius: 8px;
+  outline: none;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ttt-primary);
+  margin: 0.12rem;
+  transition: background .19s, box-shadow .17s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+}
+.ttt-square:active,
+.ttt-square:focus {
+  background: #e3f0fd;
+  box-shadow: 0 2px 7px rgba(25, 118, 210, 0.08);
+}
+.ttt-square[disabled] {
+  background: #f0f0f0;
+  cursor: not-allowed;
+  opacity: 0.78;
+}
+
+/* Status + Controls */
+.ttt-status-controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  margin-top: 0.1rem;
+}
+.ttt-status {
+  color: var(--ttt-status-text);
+  font-size: 1.18rem;
+  font-weight: 600;
+  background: var(--ttt-status-bg);
+  border-radius: 8px;
+  padding: .5rem 1.2rem;
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: .01em;
+}
+
+.ttt-restart-btn {
+  padding: .56rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: var(--ttt-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--ttt-radius);
+  box-shadow: 0 1.5px 4px rgba(255,64,129, .10);
+  cursor: pointer;
+  outline: none;
+  margin-top: 0.18rem;
+  margin-bottom: 0.1rem;
+  transition: background .16s, box-shadow .13s, opacity .15s;
+  letter-spacing: 0.03em;
+}
+.ttt-restart-btn:hover {
+  background: #e50060;
+  box-shadow: 0 4px 10px rgba(255,64,129,.14);
+  opacity: 0.98;
+}
+
+/* Footer */
+.ttt-footer {
+  text-align: center;
+  width: 100%;
+  margin-top: 2.6rem;
+  color: var(--ttt-footer-text);
+  font-size: 0.98rem;
+}
+.ttt-footer a {
+  color: var(--ttt-primary);
+  text-decoration: none;
+}
+.ttt-footer a:hover {
+  color: var(--ttt-accent);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .ttt-container {
+    min-width: 220px;
+    width: 99vw;
+    padding: 1.1rem 0.2rem 1.1rem 0.2rem;
+  }
+  .ttt-board {
+    max-width: 95vw;
+    min-width: 185px;
+  }
+  .ttt-square {
+    width: 25vw;
+    height: 25vw;
+    font-size: 1.6rem;
+  }
+  .ttt-title {
+    font-size: 1.33rem;
+  }
+  .ttt-status {
+    font-size: 0.98rem;
+    padding: .38rem .4rem;
+  }
+  .ttt-restart-btn {
+    font-size: 0.93rem;
+    padding: .41rem 1.02rem;
+  }
+  .ttt-footer {
+    margin-top: 1.2rem;
+    font-size: 0.91rem;
+  }
+}
