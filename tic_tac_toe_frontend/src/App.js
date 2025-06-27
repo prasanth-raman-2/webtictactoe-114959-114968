@@ -128,10 +128,22 @@ function Board({ squares, onSquareClick, winner, gameOver }) {
         style={{
           color:
             squares[idx] === "X"
-              ? "var(--ttt-primary)"
+              ? "#d2b919"
               : squares[idx] === "O"
               ? "var(--ttt-accent)"
               : "inherit",
+          fontFamily:
+            squares[idx] === "X"
+              ? "Arial, sans-serif"
+              : "inherit",
+          fontWeight:
+            squares[idx] === "X"
+              ? "bold"
+              : "inherit",
+          backgroundColor:
+            squares[idx] === "X"
+              ? "#e4f0fd"
+              : "",
         }}
       >
         {squares[idx] === "X"

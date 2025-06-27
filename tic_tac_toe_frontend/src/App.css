@@ -52,13 +52,14 @@ body,
   justify-content: center;
 }
 .ttt-title {
-  color: var(--ttt-primary);
+  color: #cfd219;
   font-size: 2.2rem;
   font-weight: 700;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: -0.5px;
+  text-align: left;
 }
 
 /* Board styling */
